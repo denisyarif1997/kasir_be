@@ -5,6 +5,8 @@ const companiesRoutes = require('./src/api/companies/routes');
 const officesRoutes = require('./src/api/offices/routes');
 const warehouseRoutes = require('./src/api/warehouse/routes')
 const unitRoutes = require('./src/api/units/routes')
+const productRoutes = require('./src/api/products/routes')
+const stockRoutes = require('./src/api/stocks/routes')
 
 
 
@@ -23,6 +25,9 @@ app.use('/companies', companiesRoutes);
 app.use('/offices', officesRoutes);
 app.use('/warehouse', warehouseRoutes);
 app.use('/units', unitRoutes);
+app.use('/products', productRoutes);
+app.use('/stocks', stockRoutes);
+
 
 
 

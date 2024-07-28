@@ -26,17 +26,6 @@ const getUnitsById = async (req, res) => {
     }
 };
 
-// const postUnits = async (req, res) => {
-//     const { office_id, name, description, address, phone } = req.body;
-
-//     try {
-//         await pool.query(queries.postUnits, [office_id, name, description, address, phone]);
-//         res.status(201).json({ message: "Units created successfully", body: req.body });
-//     } catch (error) {
-//         console.error('Error creating Units:', error);
-//         res.status(500).json({ error: 'Internal Server Error' });
-//     }
-// };
 
 const postUnits = async(req,res) => {
     const {company_id,name,description} = req.body;
@@ -58,10 +47,10 @@ const putUnits = async (req, res) => {
         const results = await pool.query(queries.putUnits, [company_id, name, description, id]);
         if (results.rowCount === 0) {
             res.status(404).json({ message: `Unit with ID ${id} not found` });
-        } else {
+        } else { 
             res.status(200).json({ message: `Unit with ID ${id} updated successfully` });
         }
-    } catch (error) {
+    } catch (error) {S
         console.error(`Error updating unit with ID ${id}:`, error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
