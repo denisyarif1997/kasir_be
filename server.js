@@ -32,4 +32,4 @@ app.use('/stocks', stockRoutes);
 
 
 
-app.listen(port, () => console.log(`APP LISTENING ON ${port}`));
+app.listen(port, () => console.log(`APP LISTENING ON PORT ${port}`));
