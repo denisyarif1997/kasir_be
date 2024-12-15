@@ -50,7 +50,6 @@ const getProductById = async (req, res) => {
 // }
 const postProduct = async (req, res) => {
     try {
-      // Destructure and validate input data
       const {
         company_id,
         Product_id,

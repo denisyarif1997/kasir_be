@@ -1,3 +1,4 @@
+// import
 const express = require ("express")
 const path = require('path');
 const cors = require('cors');
@@ -11,10 +12,8 @@ const stockRoutes = require('./src/api/stocks/routes');
 const priceRoutes = require('./src/api/price/routes');
 const customerRoutes = require('./src/api/customers/routes');
 const userRoutes = require('./src/api/users/routes');
-
-//boostraps middleware
-// app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules', 'bootstrap', 'dist')));
-
+const kreditRoutes = require('./src/api/kredit/routes');
+const jurnalRoutes = require('./src/api/jurnal/routes');
 
 
 
@@ -23,12 +22,12 @@ const port = 3000;
 
 app.use(express.json());
 app.get("/", (req,res) => {
-    res.send('hello user');
+    res.send('test server');
 });
 
 
 
-
+// daftar route
 app.use(cors()); // Menambahkan middleware CORS
 app.use('/categories', categoriesRoutes);
 app.use('/companies', companiesRoutes);
@@ -40,6 +39,9 @@ app.use('/stocks', stockRoutes);
 app.use('/prices', priceRoutes);
 app.use('/customers', customerRoutes);
 app.use('/users', userRoutes);
+app.use('/jurnal', jurnalRoutes)
+app.use('/kredit', kreditRoutes);
+
 
 
 
